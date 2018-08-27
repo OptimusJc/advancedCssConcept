@@ -1,0 +1,369 @@
+/*
+Color List:
+- light blue = 00AEEF;
+- dark blue = 1C75BC
+- green = 8DC63F
+- dark green = 009444
+- orange = F7941E
+- dark orange = F15A29
+- brown = 594a42;
+*/
+
+/***************************
+****************************
+Reset
+****************************
+***************************/
+@import 'normalize.css';
+
+/* Change all elements to use border-box */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/***************************
+****************************
+Base Styles
+****************************
+***************************/
+
+
+/***************************
+****************************
+Layout Styles
+****************************
+***************************/
+
+/* Content Container*/
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1170px;
+}
+/* Row */
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+/* Row Clear Float*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Media Query excludes extra small devices and includes small and above */
+[class*='col-'] {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 48em) {
+  [class*='col-'] {
+    float: left;
+  }
+  /* Column Two Thirds */
+  .col-2-3 {
+    width: 66.6666%;
+  }
+  /* Column Third */
+  .col-1-3 {
+    width: 33.3333%;
+  }
+  .col-1-2 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 48em) {
+  .pull-right-sm {
+    float:right;
+  }
+}
+
+@media only screen and (max-width : 47.9375em) {
+  .remove-gutter-xs {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+
+/***************************
+****************************
+Modules
+****************************
+***************************/
+
+
+/* Buttons-Module */
+.btn {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap; /*condese if white-space but no-wrap on text*/
+  vertical-align: middle;
+  background-image: none;
+  border: solid 1px transparent;
+  cursor: pointer;
+  padding: 12px 30px;
+  font-size: 1.313em;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-primary {
+  background: #8DC63F;
+  border-color: #8DC63F;
+  color: white;
+}
+.btn-primary:hover {
+  background: none;
+  border-color: white;
+  text-decoration: none;
+}
+.btn-nav {
+  color: white;
+}
+.btn-toggle-menu {
+  display: none;
+}
+/* btn-hero module */
+.btn-hero {
+  border: 1pt solid white;
+  background: none;
+  padding: 15px 30px;
+  font-size: 1.750em;
+  border-radius: 4px;
+  color: white;
+}
+.btn-hero:hover {
+  color: #39b54a;
+  background: white;
+
+}
+
+
+/* show the button for medium to small devices */
+/* @media (max-width: 48em) {
+  .btn-toggle-menu {
+    display: inline-block;
+    }
+  .btn-pos {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+} */
+
+@media (min-width: 48em){
+  .btn-primary {
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    background: #8DC63F;
+    overflow: hidden;
+    border-radius: 4px;
+    font-size: 1.125em;
+  }
+  .btn-nav {
+    color: white;
+  }
+  .btn-hero {
+    padding: 15px 30px;
+    border: 1pt solid white;
+    font-size: 1.750em;
+    border-radius: 4px;
+  }
+  .btn-hero:hover {
+    color: #39b54a;
+    background: white;
+  
+  }
+}
+
+/* HEADER MODULE */
+.header-primary {
+  background: #9B8579;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* LOGO MODULES */
+.logo {
+  overflow: hidden;
+  display: inline-block;
+}
+.logo-primary {
+  width: 64px;
+  height: 64px;
+}
+.logo-primary img {
+  height: 100%;
+}
+
+/* NAV MODULES */
+.nav > ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+.nav li > a {
+  text-decoration: none;
+}
+.nav-primary {
+  margin-top: 32px;
+}
+
+/* HERO MODULES */
+.hero {
+  text-align: center;
+}
+.hero-primary {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #594A42;
+  color: white;
+  
+}
+.hero-primary.bg-image > img {
+  opacity: .55;
+}
+/* ensure contents will be layored on top of the background image */
+.hero-body {
+  position: relative;
+}
+.hero-title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 2.625em;
+}
+.hero-subtitle {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 1.500em;
+  font-weight: normal;
+}
+/* specify a margin for a button in the hero-subtitle section */
+.hero-subtitle + button {
+  margin-top: 25px;
+}
+
+/* BACKGROUND MODULE */
+.bg-image {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+/* select the image of the .bg-image class */
+.bg-image > img {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  min-width: 100%;
+}
+
+/* MEDIA MODULES */
+/* stop media objects content from wrapping */
+.media, .media-body {
+  overflow: hidden;
+}
+.media {
+  padding-top: 40px;
+}
+
+.media-body > button {
+  margin-top: 40px;
+}
+.media-heading {
+  /* font-size: 28pt; */
+  margin-top: 0px;
+}
+.media-item {
+  float: left;
+  margin-right: 10px;
+  
+}
+/* target icons */
+.media-item i {
+  color: #594a42;
+  font-size: 5em;
+}
+
+
+/* TESTIMONIAL MODULE */
+.testimonial {
+  text-align: center;
+  color: white;
+}
+.testimonial-primary {
+  background:#594a42;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.testimonial-body {
+  line-height: 1.750em;
+}
+.testimonial-icons {
+  color: white;
+  padding-bottom: 50px;
+}
+.testimonial-icons i {
+  font-size: 3em;
+  text-shadow: 3px 3px 5px #000; /*adds a shadow (horizontal vertical blur color)*/
+}
+.testimonial.bg-image > img {
+  opacity: .55;
+
+}
+/* changing the position to relative brings it to the top */
+.testimonial-body, .testimonial-icons {
+  position: relative;
+}
+
+@media (min-width: 48px){
+  .testimonial {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+    color: white;
+  }
+  .testimonial-icons {
+    padding-bottom: 60px;
+  }
+
+  .media
+}
+
+
+
+
+/***************************
+****************************
+Theme Styles
+****************************
+***************************/
+.background-primary {
+  background: #F7941E;
+}
+.background-secondary {
+  background: #00AEEF;
+}
+.background-tertiary {
+  background: #8DC63F;
+}
+.background-quaternary {
+  background: #594a42;
+}
+.background-quinary {
+  background: #e7e1d7;
+}
